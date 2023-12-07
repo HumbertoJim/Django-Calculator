@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Calculator{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+    <div class="col-sm-12 col-md-8 col-lg-6">
+        <h1 class="text-center">Simple Calculator</h1>
+
+        <form action="/tools/simple-calculator" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <span class="black input-group-text">#</span>
+                <span class="form-control">{{sentence}}</span>
+            </div>
+
+            <div class="row">
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="7">7</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="8">8</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="9">9</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="4">4</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="5">5</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="6">6</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="1">1</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="2">2</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="3">3</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="0">0</button></div>
+                        <div class="col-4 mb-3"><button class="btn btn-dark w-100" type="submit" name="operation" value="operation">.</button></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row mb-3"><button class="btn btn-primary w-100" type="submit" name="operation" value="add">+</button></div>
+                    <div class="row mb-3"><button class="btn btn-primary w-100" type="submit" name="operation" value="subtract">-</button></div>
+                    <div class="row mb-3"><button class="btn btn-primary w-100" type="submit" name="operation" value="multiply">*</button></div>
+                    <div class="row mb-3"><button class="btn btn-primary w-100" type="submit" name="operation" value="divide">/</button></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock %}

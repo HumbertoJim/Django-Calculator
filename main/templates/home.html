@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container" style="width: 40%;">
+    <h1 class="mb-4 text-center">Django Calculator Home</h1>
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action list-group-item-primary" href="/tools/calculator">Calculator</a>
+        <a class="list-group-item list-group-item-action list-group-item-primary" href="/tools/prank-calculator">Prank Calculator</a>
+        <a class="list-group-item list-group-item-action list-group-item-primary" href="/tools/simple-calculator">Simple Calculator</a>
+        <a class="list-group-item list-group-item-action list-group-item-primary" href="#">About</a>
+    </div>
+</div>
+{% endblock %}

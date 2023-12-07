@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Calculator{% endblock %}
+
+{% block content %}
+<div class="container" style="width: 40%;">
+    <h1 class="text-center">Prank Calculator</h1>
+
+    <div class="input-group mb-3">
+        <span class="black input-group-text">Result</span>
+        <span class="form-control">{{result}}</span>
+    </div>
+
+    <form action="/tools/prank-calculator" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-9">{{form}}</div>
+            <div class="col-2">
+                <div class="row mb-1"><button class="btn btn-primary" type="submit" name="operation" value="add">+</button></div>
+                <div class="row mb-1"><button class="btn btn-primary" type="submit" name="operation" value="subtract">-</button></div>
+                <div class="row mb-1"><button class="btn btn-primary" type="submit" name="operation" value="multiply">*</button></div>
+                <div class="row mb-1"><button class="btn btn-primary" type="submit" name="operation" value="divide">/</button></div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
